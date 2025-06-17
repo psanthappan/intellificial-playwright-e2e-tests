@@ -484,7 +484,7 @@ reporter: [
 
 ### 10.1. Set up a base page
 
-1. Create a base `pagepage.ts` under `./tests/page-objects'` folder
+1. Create a base `basepage.ts` under `./tests/page-objects'` folder
 2. A sample content of the file: 
 
 <details>
