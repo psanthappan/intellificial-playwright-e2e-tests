@@ -844,6 +844,7 @@ Use the **Model Context Protocol (MCP)** to integrate Playwright into VS Code Co
    👉 *Upgrade if you're using an older version.*
 2. Make sure **GitHub Copilot** is set up and running in your VS Code.
    1. [Copilot Setup](https://code.visualstudio.com/docs/copilot/setup)
+   2. `User profile` -> `Settings` -> `Co-pilot` -> `Complete setup`
 
 ---
 
