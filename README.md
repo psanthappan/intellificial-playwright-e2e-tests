@@ -447,6 +447,10 @@ npm install -g allure-commandline
 ```sh
 allure serve
 ```
+
+__Note__: For windows, if you don't have JAVA installed, you might want to download and set one from : https://adoptium.net/en-GB/download/ 
+
+
 5. Advanced Reporter Configuration
 
 ```ts
