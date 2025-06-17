@@ -28,25 +28,25 @@
   - [10.2. Set up a Login page](#102-set-up-a-login-page)
   - [10.3. Adding new tests](#103-adding-new-tests)
 - [11. Data Handling](#11-data-handling)
-- [12. Reading data from JSON file](#12-reading-data-from-json-file)
-  - [12.1. Recommended `tsconfig.json` for JSON Import Support](#121-recommended-tsconfigjson-for-json-import-support)
-  - [12.2. Env Data handling](#122-env-data-handling)
-- [13. API Integration](#13-api-integration)
-  - [13.1. Basic REST API – GET Request](#131-basic-rest-api--get-request)
-  - [13.2. Working with OAuth API](#132-working-with-oauth-api)
-- [14. MCP Server Integration with Playwright](#14-mcp-server-integration-with-playwright)
-  - [14.1. Pre-check](#141-pre-check)
-  - [14.2. Setup Steps](#142-setup-steps)
-  - [14.3. References](#143-references)
-- [15. Code utils](#15-code-utils)
-  - [15.1. Delete Allure results folder](#151-delete-allure-results-folder)
-- [16. ✅ Best Practices for Playwright Projects](#16--best-practices-for-playwright-projects)
-  - [16.1. Project Naming Convention](#161-project-naming-convention)
-  - [16.2. File \& Code Naming Conventions](#162-file--code-naming-conventions)
-  - [16.3. .gitignore Files](#163-gitignore-files)
-- [17. Possible Errors](#17-possible-errors)
-  - [17.1. Error:](#171-error)
-  - [17.2. Possible resolution:](#172-possible-resolution)
+  - [11.1. Reading data from JSON file](#111-reading-data-from-json-file)
+    - [11.1.1. Recommended `tsconfig.json` for JSON Import Support](#1111-recommended-tsconfigjson-for-json-import-support)
+  - [11.2. Env Data handling](#112-env-data-handling)
+- [12. API Integration](#12-api-integration)
+  - [12.1. Basic REST API – GET Request](#121-basic-rest-api--get-request)
+  - [12.2. Working with OAuth API](#122-working-with-oauth-api)
+- [13. MCP Server Integration with Playwright](#13-mcp-server-integration-with-playwright)
+  - [13.1. Pre-check](#131-pre-check)
+  - [13.2. Setup Steps](#132-setup-steps)
+  - [13.3. References](#133-references)
+- [14. Code utils](#14-code-utils)
+  - [14.1. Delete Allure results folder](#141-delete-allure-results-folder)
+- [15. ✅ Best Practices for Playwright Projects](#15--best-practices-for-playwright-projects)
+  - [15.1. Project Naming Convention](#151-project-naming-convention)
+  - [15.2. File \& Code Naming Conventions](#152-file--code-naming-conventions)
+  - [15.3. .gitignore Files](#153-gitignore-files)
+- [16. Possible Errors](#16-possible-errors)
+  - [16.1. Error:](#161-error)
+  - [16.2. Possible resolution:](#162-possible-resolution)
 
 
 
@@ -635,7 +635,7 @@ This structure helps you:
 
 ## 11. Data Handling
 
-## 12. Reading data from JSON file
+### 11.1. Reading data from JSON file
 
 1. **Create a JSON file**  
    Add an object in:  
@@ -649,7 +649,7 @@ import constants from '../../data/constants.json';
 4. Access values using `dot` notation. You can also use `JSON.stringify()` to print or log entire objects.
 
 
-### 12.1. Recommended `tsconfig.json` for JSON Import Support
+#### 11.1.1. Recommended `tsconfig.json` for JSON Import Support
 1. To import `.json` files smoothly, ensure your project has a valid TypeScript config:
 2. Create the file `tsconfig.json` at the project root and add the follwoing basic config
 
@@ -677,7 +677,7 @@ SyntaxError: data/constants.json: Unexpected end of JSON input
 
 ---
 
-### 12.2. Env Data handling
+### 11.2. Env Data handling
 Use `.env` files to manage environment-specific variables for flexible and secure test execution.
 
 ---
@@ -745,11 +745,11 @@ if (!baseUrl) {
 ---
 
 
-## 13. API Integration
+## 12. API Integration
 
 Playwright allows seamless API testing using its built-in `request` object. Below are examples for both basic REST and OAuth-protected API calls.
 
-### 13.1. Basic REST API – GET Request
+### 12.1. Basic REST API – GET Request
 
 Fetch a list of users from a public API:
 
@@ -777,7 +777,7 @@ test.describe("REST API Demo", () => {
 ```
 
 
-### 13.2. Working with OAuth API
+### 12.2. Working with OAuth API
 
 __Steps to Generate a GitHub Bearer Token__:
 
@@ -833,13 +833,13 @@ test.describe("OAuth Example", () => {
 
 ---
 
-## 14. MCP Server Integration with Playwright
+## 13. MCP Server Integration with Playwright
 
 Use the **Model Context Protocol (MCP)** to integrate Playwright into VS Code Copilot workflows and accelerate test creation with AI assistance.
 
 ---
 
-### 14.1. Pre-check
+### 13.1. Pre-check
 1. Ensure you have **VS Code v1.99** or later.  
    👉 *Upgrade if you're using an older version.*
 2. Make sure **GitHub Copilot** is set up and running in your VS Code.
@@ -848,7 +848,7 @@ Use the **Model Context Protocol (MCP)** to integrate Playwright into VS Code Co
 ---
 
 
-### 14.2. Setup Steps
+### 13.2. Setup Steps
 
 1. Create the following file if not present
    `.vscode/mcp.json`
@@ -873,7 +873,7 @@ Use the **Model Context Protocol (MCP)** to integrate Playwright into VS Code Co
 5. 🎉 Sit back and watch Copilot generate meaningful test scripts powered by Playwright MCP!
 
 
-### 14.3. References
+### 13.3. References
 1. https://github.com/microsoft/playwright-mcp
 2. https://code.visualstudio.com/docs/copilot/chat/mcp-servers
 3. https://github.com/microsoft/playwright-mcp
@@ -881,9 +881,9 @@ Use the **Model Context Protocol (MCP)** to integrate Playwright into VS Code Co
 ---
 
 
-## 15. Code utils
+## 14. Code utils
 
-### 15.1. Delete Allure results folder
+### 14.1. Delete Allure results folder
 
 ```ts
 // Deletes allure-results for every run
@@ -897,20 +897,20 @@ if (process.env.RUNNER?.toUpperCase() === "LOCAL") {
 }
 ```
 
-## 16. ✅ Best Practices for Playwright Projects
+## 15. ✅ Best Practices for Playwright Projects
 
 Follow these conventions to ensure your project remains clean, consistent, and easy to maintain.
 
 ---
 
-### 16.1. Project Naming Convention
+### 15.1. Project Naming Convention
 
 - Format: `<project-name>-playwright-e2e-tests`  
 - Example: `skyline-playwright-e2e-tests`
 
 ---
 
-### 16.2. File & Code Naming Conventions
+### 15.2. File & Code Naming Conventions
 
 | Item                | Convention                                     | Example                            |
 |---------------------|------------------------------------------------|------------------------------------|
@@ -924,7 +924,7 @@ Follow these conventions to ensure your project remains clean, consistent, and e
 
 🎯 **Consistent naming improves readability and reduces confusion across teams.**
 
-### 16.3. .gitignore Files
+### 15.3. .gitignore Files
 
 The following files and directories are generally excluded from being pushed to Git repositories to keep the repo clean and avoid committing unnecessary or sensitive data.
 
@@ -942,16 +942,16 @@ config/
 
 
 
-## 17. Possible Errors
+## 16. Possible Errors
 
-### 17.1. Error:
+### 16.1. Error:
 ```log
 Error: page.goto: Test ended.
 Call log:
   - navigating to "https://katalon-demo-cura.herokuapp.com/", waiting until "load"
 ```
 
-### 17.2. Possible resolution:
+### 16.2. Possible resolution:
 1. Increase the timeout
 2. Check if you forgot to add `await` for
    1. `page.goto()` method 
