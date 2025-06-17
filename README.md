@@ -259,6 +259,11 @@ npx playwright codegen https://katalon-demo-cura.herokuapp.com/
 ### 4.3. 🎬 Demo time
 Let's walk through a live test recording using Playwright Codegen...
 
+__STEPS__:
+1. Capture the login flow
+2. Run it using `Codegen` -> If you don't see a browser, enable in the `settings`
+
+
 ---
 
 ## 5. Annotations and Tags in Playwright
