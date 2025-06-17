@@ -98,6 +98,15 @@ Initialize a new Git repository in your project
 git init
 ```
 
+__Note__: If you get an error on running `webkit` browser, add the following config to ignore SSL cert
+
+```ts
+use: {
+    ignoreHTTPSErrors: true,
+  },
+```
+
+
 🎯 **Basic Setup** is completed!
 
 ---
