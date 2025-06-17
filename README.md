@@ -260,9 +260,14 @@ npx playwright codegen https://katalon-demo-cura.herokuapp.com/
 Let's walk through a live test recording using Playwright Codegen...
 
 __STEPS__:
-1. Capture the login flow
+1. Capture the login flow under `functional` folder
 2. Run it using `Codegen` -> If you don't see a browser, enable in the `settings`
 
+💡In prettier, if you want to increase the line width, modify the setting to:
+
+```json
+"prettier.printWidth": 150
+```
 
 ---
 
@@ -319,6 +324,14 @@ test.describe("Login functionality", { annotation: { type: "EPIC", description: 
 ```sh
 npx playwright test --grep '@smoke' --headed
 ```
+
+In windows, remember to escape the quotes, like
+
+```json
+"demo": "npx playwright test --grep=\"@smoke\" --headed",
+```
+
+
 
 ## 6. Locators - Page Methods Returning Locator Summary Table
 
