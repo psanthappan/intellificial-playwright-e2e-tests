@@ -43,6 +43,7 @@
 - [16. ✅ Best Practices for Playwright Projects](#16--best-practices-for-playwright-projects)
   - [16.1. Project Naming Convention](#161-project-naming-convention)
   - [16.2. File \& Code Naming Conventions](#162-file--code-naming-conventions)
+  - [16.3. .gitignore Files](#163-gitignore-files)
 - [17. Possible Errors](#17-possible-errors)
   - [17.1. Error:](#171-error)
   - [17.2. Possible resolution:](#172-possible-resolution)
@@ -891,6 +892,22 @@ Follow these conventions to ensure your project remains clean, consistent, and e
 ---
 
 🎯 **Consistent naming improves readability and reduces confusion across teams.**
+
+### 16.3. .gitignore Files
+
+The following files and directories are generally excluded from being pushed to Git repositories to keep the repo clean and avoid committing unnecessary or sensitive data.
+
+```log
+# Playwright-related
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+todo.md
+allure-results/
+config/
+```
 
 
 
