@@ -38,15 +38,26 @@
   - [13.1. Pre-check](#131-pre-check)
   - [13.2. Setup Steps](#132-setup-steps)
   - [13.3. References](#133-references)
-- [14. Code utils](#14-code-utils)
-  - [14.1. Delete Allure results folder](#141-delete-allure-results-folder)
-- [15. ✅ Best Practices for Playwright Projects](#15--best-practices-for-playwright-projects)
-  - [15.1. Project Naming Convention](#151-project-naming-convention)
-  - [15.2. File \& Code Naming Conventions](#152-file--code-naming-conventions)
-  - [15.3. .gitignore Files](#153-gitignore-files)
-- [16. Possible Errors](#16-possible-errors)
-  - [16.1. Error:](#161-error)
-  - [16.2. Possible resolution:](#162-possible-resolution)
+- [14. Check your knowledge](#14-check-your-knowledge)
+    - [14.0.1. What command is used to initialize a new Playwright project with TypeScript and all browsers?](#1401-what-command-is-used-to-initialize-a-new-playwright-project-with-typescript-and-all-browsers)
+    - [14.0.2. In which configuration file do you specify to ignore HTTPS errors when running tests in WebKit?](#1402-in-which-configuration-file-do-you-specify-to-ignore-https-errors-when-running-tests-in-webkit)
+    - [14.0.3. Which folder in the recommended project structure is used to store reusable page actions and locators?](#1403-which-folder-in-the-recommended-project-structure-is-used-to-store-reusable-page-actions-and-locators)
+    - [14.0.4. What file extensions are recognized by Playwright as valid test files? (Choose two)](#1404-what-file-extensions-are-recognized-by-playwright-as-valid-test-files-choose-two)
+    - [14.0.5. Which Playwright feature allows you to automatically generate test scripts based on browser interactions?](#1405-which-playwright-feature-allows-you-to-automatically-generate-test-scripts-based-on-browser-interactions)
+    - [14.0.6. What does the following script do?](#1406-what-does-the-following-script-do)
+    - [14.0.7. Which Playwright method is best for selecting elements using `aria-label` or `<label>` tags?](#1407-which-playwright-method-is-best-for-selecting-elements-using-aria-label-or-label-tags)
+    - [14.0.8. How can screenshots be automatically captured during test execution?](#1408-how-can-screenshots-be-automatically-captured-during-test-execution)
+    - [14.0.9. Which command installs the Allure Playwright integration?](#1409-which-command-installs-the-allure-playwright-integration)
+    - [14.0.10. Why is the `cross-env` package used in Playwright projects on Windows?](#14010-why-is-the-cross-env-package-used-in-playwright-projects-on-windows)
+- [15. Code utils](#15-code-utils)
+  - [15.1. Delete Allure results folder](#151-delete-allure-results-folder)
+- [16. ✅ Best Practices for Playwright Projects](#16--best-practices-for-playwright-projects)
+  - [16.1. Project Naming Convention](#161-project-naming-convention)
+  - [16.2. File \& Code Naming Conventions](#162-file--code-naming-conventions)
+  - [16.3. .gitignore Files](#163-gitignore-files)
+- [17. Possible Errors](#17-possible-errors)
+  - [17.1. Error:](#171-error)
+  - [17.2. Possible resolution:](#172-possible-resolution)
 
 
 
@@ -881,10 +892,103 @@ Use the **Model Context Protocol (MCP)** to integrate Playwright into VS Code Co
 
 ---
 
+## 14. Check your knowledge
 
-## 14. Code utils
+#### 14.0.1. What command is used to initialize a new Playwright project with TypeScript and all browsers?
 
-### 14.1. Delete Allure results folder
+- []`npx playwright install`  
+- []`npm init playwright@latest`  
+- []`npx create-playwright-app`  
+- []`npm install playwright`
+
+---
+
+#### 14.0.2. In which configuration file do you specify to ignore HTTPS errors when running tests in WebKit?
+
+- []`package.json`  
+- []`.env`  
+- []`playwright.config.ts`  
+- []`tsconfig.json`
+
+---
+
+#### 14.0.3. Which folder in the recommended project structure is used to store reusable page actions and locators?
+
+- []`tests/functional/`  
+- []`tests/page-objects/`  
+- []`tests/e2e/`  
+- []`tests/demo/`
+
+---
+
+#### 14.0.4. What file extensions are recognized by Playwright as valid test files? (Choose two)
+
+- []`.playwright.ts`  
+- []`.test.ts`  
+- []`.spec.ts`  
+- []`.e2e.ts`
+
+---
+
+#### 14.0.5. Which Playwright feature allows you to automatically generate test scripts based on browser interactions?
+
+- [] Test runner  
+- [] Codegen  
+- [] Inspector  
+- [] Headless mode
+
+---
+
+#### 14.0.6. What does the following script do?  
+`"demo": "npx playwright test --grep=\"@smoke\" --headed"`
+
+- [] Runs all tests with "demo" in the filename  
+- [] Runs smoke tests in headless mode  
+- [] Runs tests tagged with `@smoke` in headed mode  
+- [] Runs API tests only
+
+---
+
+#### 14.0.7. Which Playwright method is best for selecting elements using `aria-label` or `<label>` tags?
+
+- [] `page.getByText()`  
+- [] `page.locator()`  
+- [] `page.getByRole()`  
+- [] `page.getByLabel()`
+
+---
+
+#### 14.0.8. How can screenshots be automatically captured during test execution?
+
+- [] By enabling `"screenshot": "auto"` in `.env`  
+- [] Using `page.capture()`  
+- [] Setting `use: { screenshot: "on" }` in `playwright.config.ts`  
+- [] Calling `page.screenshot()` in a test
+
+---
+
+#### 14.0.9. Which command installs the Allure Playwright integration?
+
+- [] `npm install -g allure-playwright`  
+- [] `npm install -D allure-commandline`  
+- [] `npm install -D allure-playwright`  
+- [] `npx install allure`
+
+---
+
+#### 14.0.10. Why is the `cross-env` package used in Playwright projects on Windows?
+
+- [] To enable browser support  
+- [] To normalize file paths  
+- [] To support environment variable loading across platforms  
+- [] To enable Allure reporting
+
+---
+
+
+## 15. Code utils
+
+### 15.1. Delete Allure results folder
 
 ```ts
 // Deletes allure-results for every run
@@ -898,20 +1002,20 @@ if (process.env.RUNNER?.toUpperCase() === "LOCAL") {
 }
 ```
 
-## 15. ✅ Best Practices for Playwright Projects
+## 16. ✅ Best Practices for Playwright Projects
 
 Follow these conventions to ensure your project remains clean, consistent, and easy to maintain.
 
 ---
 
-### 15.1. Project Naming Convention
+### 16.1. Project Naming Convention
 
 - Format: `<project-name>-playwright-e2e-tests`  
 - Example: `skyline-playwright-e2e-tests`
 
 ---
 
-### 15.2. File & Code Naming Conventions
+### 16.2. File & Code Naming Conventions
 
 | Item                | Convention                                     | Example                            |
 |---------------------|------------------------------------------------|------------------------------------|
@@ -925,7 +1029,7 @@ Follow these conventions to ensure your project remains clean, consistent, and e
 
 🎯 **Consistent naming improves readability and reduces confusion across teams.**
 
-### 15.3. .gitignore Files
+### 16.3. .gitignore Files
 
 The following files and directories are generally excluded from being pushed to Git repositories to keep the repo clean and avoid committing unnecessary or sensitive data.
 
@@ -943,16 +1047,16 @@ config/
 
 
 
-## 16. Possible Errors
+## 17. Possible Errors
 
-### 16.1. Error:
+### 17.1. Error:
 ```log
 Error: page.goto: Test ended.
 Call log:
   - navigating to "https://katalon-demo-cura.herokuapp.com/", waiting until "load"
 ```
 
-### 16.2. Possible resolution:
+### 17.2. Possible resolution:
 1. Increase the timeout
 2. Check if you forgot to add `await` for
    1. `page.goto()` method 
