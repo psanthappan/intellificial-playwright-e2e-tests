@@ -1,4 +1,4 @@
-1. **🎭 PLAYRIGHT E2E TESTS - STAGING**
+1. **🎭 PLAYRIGHT E2E TESTS**
 ---
 
 - [1. Getting Started](#1-getting-started)
@@ -49,7 +49,7 @@
 
 
 
-This is the staging projects demonstrates the ability to build a new project from scratch, noting down all instructions in one place. 
+This project demonstrates the ability to build a new project from scratch, noting down all instructions in one place. 
 
 ## 1. Getting Started
 
