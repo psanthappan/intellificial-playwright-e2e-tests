@@ -1,0 +1,9 @@
+# Playwright-related
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+todo.md
+allure-results/
+config/
