@@ -4,7 +4,8 @@
   "description": "1. **🎭 PLAYRIGHT E2E TESTS** ---",
   "main": "hello.js",
   "scripts": {
-    "demo": "cross-env ENV=test npx playwright test ./tests/functional/login.pom.spec.ts --headed",
+    "demo-5": "cross-env ENV=test npx playwright test ./tests/functional/login.pom.spec.ts --headed",
+    "demo": "cross-env ENV=test npx playwright test ./tests/api/oauth-example.spec.ts",
     "demo-4": "npx playwright test ./tests/functional/login.pom.spec.ts --headed",
     "demo-3": "npx playwright test --grep \"@smoke\" --headed",
     "demo-2": "npx playwright test ./tests/functional/login-annotated.spec.ts --headed",
