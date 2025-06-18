@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "1. **🎭 PLAYRIGHT E2E TESTS** ---",
   "main": "hello.js",
-  "scripts": {},
+  "scripts": {
+    "demo": "npx playwright test ./tests/functional/login.spec.ts --headed"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/psanthappan/intellificial-playwright-e2e-tests.git"
