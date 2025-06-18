@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { takeScreenshot } from "../helpers/take-screenshot";
 
 test.describe("Login functionality", { annotation: { type: "EPIC", description: "User Story: JIRA-1234" } }, () => {
   test.beforeEach(async ({ page }) => {
@@ -8,6 +9,9 @@ test.describe("Login functionality", { annotation: { type: "EPIC", description: 
     // Assert if the title and header text
     await expect(page).toHaveTitle("CURA Healthcare Service");
     await expect(page.locator("//h1")).toHaveText("CURA Healthcare Service");
+
+    // Take screenshot
+    await takeScreenshot({ page }, "Screenshot-1");
   });
 
   // Successful login
