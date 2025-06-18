@@ -7,3 +7,4 @@ playwright/.cache/
 todo.md
 allure-results/
 config/
+debug/
