@@ -1,0 +1,3 @@
+{
+    "SQL Query" : "SELECT * FROM TABLE A WHERE CUSTOMER = 'A"
+}

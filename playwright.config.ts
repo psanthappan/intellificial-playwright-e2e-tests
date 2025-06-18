@@ -1,4 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
+import dotenv from 'dotenv'
+import path from 'path'
 
 /**
  * Read environment variables from file.
@@ -7,6 +9,22 @@ import { defineConfig, devices } from "@playwright/test";
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+// Set default ENV if not provided
+let ENV = process.env.ENV || "test";
+ENV = ENV.toUpperCase();
+
+console.log(`>>> ENV: ${ENV}`);
+// Validate allowed ENV values
+const allowedEnvs = ['DEV', 'TEST', 'UAT', 'PROD'];
+if (!allowedEnvs.includes(ENV)) {
+    throw new Error(`Given ENV name: ${ENV} is invalid and accepted values are: ${allowedEnvs}`)
+}
+
+// Load the appropriate .env file
+console.log(`*** Loading ${ENV} environment config ***`);
+dotenv.config({ path: path.resolve(__dirname, `config/.env.${ENV}`) });
+
 
 /**
  * See https://playwright.dev/docs/test-configuration.
