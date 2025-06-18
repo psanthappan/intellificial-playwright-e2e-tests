@@ -4,7 +4,9 @@
   "description": "1. **🎭 PLAYRIGHT E2E TESTS** ---",
   "main": "hello.js",
   "scripts": {
-    "demo": "npx playwright test ./tests/functional/login.spec.ts --headed"
+    "demo": "npx playwright test --grep \"@smoke\" --headed",
+    "demo-2": "npx playwright test ./tests/functional/login-annotated.spec.ts --headed",
+    "demo-1": "npx playwright test ./tests/functional/login.spec.ts --headed"
   },
   "repository": {
     "type": "git",
